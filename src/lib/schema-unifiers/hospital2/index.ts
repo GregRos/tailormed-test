@@ -1,21 +1,5 @@
 import dayjs from "dayjs";
-import {Patient, Treatment} from "../types";
-import {Unifier} from "../../common/container";
-
-export const patient = {
-    key: "hospital2/patient",
-    patient(obj: any) {
-        return {
-            PatientId: obj.PatientId + "",
-            MRN: obj.MRN + "",
-            DateOfBirth: dayjs(obj.PatientDOB, "MM/DD/YYYY").toDate(),
-            IsDeceased: obj.IsDeceased === "Y" ? "deceased" : "living",
-            Sex: obj.Sex === "Male" ? "male" : "female"
-        } as Patient
-    }
-};
-
-export const
+import {Patient, Treatment, SchemaUnifier} from "../types";
 
 export default {
     key: "hospital2",
@@ -36,5 +20,5 @@ export default {
             StartDate: dayjs(obj.StartDate, "MM/DD/YYYY").toDate()
         }
     }
-} as Unifier;
+} as SchemaUnifier;
 

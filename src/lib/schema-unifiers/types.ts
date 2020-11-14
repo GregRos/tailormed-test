@@ -1,5 +1,4 @@
 // I don't know the range of these values. Might be more or less.
-
 export type DeceasedStatus = "living" | "deceased" | "hospice";
 
 // I don't know the range of these values. 'Intersex' might also be valid for example.
@@ -19,7 +18,7 @@ export interface Treatment {
     DisplayName: string;
 }
 
-export interface Unifier {
+export interface SchemaUnifier {
     key: HospitalCode;
     patient(obj: any): Patient;
     treatment(obj: any): Treatment;

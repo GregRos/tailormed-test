@@ -5,8 +5,11 @@ import {TabularFileReader} from "./types";
 export default {
     key: "csv",
     async parse(data: Buffer) {
-        const text = data.toString("utf8");
-        const result: any[][] = await parse(text) as any;
+        let text = data.toString("utf8");
+        const result: any[][] = await parse(text, {
+            bom: true, // reference files included BOM
+            cast: true
+        }) as any;
         return matrixWithHeaderToObjects(result);
     }
 } as TabularFileReader;
