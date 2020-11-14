@@ -1,8 +1,8 @@
-import {HospitalCode} from "./schema-unifiers/types";
-import {Format} from "./file-readers/types";
+import {HospitalCode} from "./schema-unification/types";
+import {Format} from "./parsing/types";
 import {promises as fs} from "fs";
-import {FileReaderContainer} from "./file-readers";
-import {SchemaUnifierContainer} from "./schema-unifiers";
+import {FileReaderContainer} from "./parsing";
+import {schemaUnifierContainer} from "./schema-unification";
 
 export interface HospitalFileInfo {
     path: string;
@@ -24,7 +24,7 @@ export async function loadFile(file: HospitalFileInfo) {
 }
 
 export async function runImportJob(job: JobInfo) {
-    const schemaUnifier = SchemaUnifierContainer.get(job.hospital);
+    const schemaUnifier = schemaUnifierContainer.get(job.hospital);
     const rawPatientData = await loadFile(job.patient);
     const patientData = rawPatientData.map(x => schemaUnifier.patient(x));
     const rawTreatmentData = await loadFile(job.treatment);

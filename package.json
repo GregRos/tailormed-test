@@ -1,7 +1,7 @@
 {
   "name": "tailormed",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "dist/lib/main.js",
   "license": "MIT",
   "dependencies": {
     "async-csv": "^2.1.3",

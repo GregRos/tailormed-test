@@ -1,6 +1,6 @@
 import {parse} from "async-csv";
-import {matrixWithHeaderToObjects} from "./common";
-import {TabularFileReader} from "./types";
+import {matrixWithHeaderToObjects} from "../common";
+import {TabularFileReader} from "../types";
 
 export default {
     key: "csv",

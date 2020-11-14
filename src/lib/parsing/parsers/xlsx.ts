@@ -1,7 +1,7 @@
 import * as xlsx from "xlsx";
 import {promises as fs} from "fs";
-import {matrixWithHeaderToObjects} from "./common";
-import {TabularFileReader} from "./types";
+import {matrixWithHeaderToObjects} from "../common";
+import {TabularFileReader} from "../types";
 export default {
     key: "xlsx",
     async parse(data: Buffer) {
